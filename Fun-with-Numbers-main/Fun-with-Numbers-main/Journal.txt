@@ -1,0 +1,53 @@
+14/2/2024
+Analysed fun withnumber app and made notes
+set up the repository
+created a new python file and strated coding the main ui
+
+
+16/2/2024
+Added pylint
+created a variable for choice
+fixed errors that were detected by pylint.
+
+21/2/2024
+Created the 4 sub-routines; A, B, C, X
+Added a "While loop" to handle the exit instead of crashing.
+Added docstrings and placeholder text for ecah sub-routine.
+Added to the User Interface on the main interface
+Added an "else" function to give a response to the user when an invalid or unnamed choice/option is given.
+Terminal was acting up, not showing the correct outputs. Cloed and reopened tab and started working. However, after running a function, it directly goes back to the main function.
+Added "clear_console" and os function to cater for all operating systems like windows, linux (macOS etc)
+
+23/2/2024
+Adding comments within code for clarity and understanding the function of codes and functions.
+
+26/2/2024
+wrote code for determining if number inputted by user is odd or even 
+lists the fcators for the number
+wrote code if number is prime or not
+
+28/2/2024
+added code and print functions to format to the plotter sub-routine.
+made pylintrc (runcontrol) to expand the word limit from 100 to 130
+added the vertical line bar to mimic "dingle's" formatting.
+used print to add all the x and y axis values
+added code to respond to potential incorrect user input.
+
+1/3/2024
+Finished code for the plotter sub-routine
+added a X plotter on the number plane to plot coordinates
+added code to test if inputted numbers are valid.
+started code of stats sub-routine. 
+added formatting and sub topics
+
+8/3/2024
+Added global code for functions like plot count etc
+
+11/3/2024
+wrote code for save_stats and load_stats sub-routine.
+usd the open function to open the stats.txt file to read the stats saved from previos sessions.
+
+13/3/2024
+completed the save_stats code and fixed errors from global variables
+completed the load_stats variable. Wrote code for storing the stats in stats.txt
+went over the needs for the project and requirements
