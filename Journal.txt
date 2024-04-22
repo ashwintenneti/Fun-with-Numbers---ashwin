@@ -51,3 +51,16 @@ usd the open function to open the stats.txt file to read the stats saved from pr
 completed the save_stats code and fixed errors from global variables
 completed the load_stats variable. Wrote code for storing the stats in stats.txt
 went over the needs for the project and requirements
+
+20/4/2024
+brainstorming what new improvements and bug-fixes I am going to implement.
+selected three new improvements for perfomance and the user interface.
+three improvements are "More clear and detailed error handling providing instructions for the user", "different font colour for aesthetics and ease of differentiating between plotter values and plot symbol ‘x", "caluclator function"
+
+22/4/2024
+researching and experimenting how to write the code for the three improvements. 
+Mainly researching which extension to add on github for the font colour and style.
+Found installation for font colour. Downloaded via "pip install termcolor"
+termcolor package is coming up with an error. Says "unable to import termcolor"
+Found another package. using colorama and installed via pip install colorama.
+Found a problem. Unable to call the colorama packgae underneath a while loop. When outside the while loop, the entire text goes red when running the code and begins to flash and flicker.
