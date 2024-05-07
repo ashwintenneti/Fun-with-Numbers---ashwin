@@ -64,3 +64,8 @@ Found installation for font colour. Downloaded via "pip install termcolor"
 termcolor package is coming up with an error. Says "unable to import termcolor"
 Found another package. using colorama and installed via pip install colorama.
 Found a problem. Unable to call the colorama packgae underneath a while loop. When outside the while loop, the entire text goes red when running the code and begins to flash and flicker.
+
+7/5/2024
+Have written code for calculator feature.
+Basic function works but when running the program, everything is flashing and not working properly.
+Error handling as well isn't functioning as it is meant to.
