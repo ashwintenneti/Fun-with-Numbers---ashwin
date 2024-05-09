@@ -5,6 +5,8 @@ from operator import sub
 from operator import mul
 from operator import truediv
 import os
+import fontstyle
+
 
 NUMBER_COUNT = 0
 NUMBER_TOTAL = 0
@@ -22,7 +24,7 @@ def main():
     #main function will continue to loop, whilst exit_flag == false
     while not exit_flag:
         clear_console()
-        print("Welcome to Fun with Numbers")
+        print(fontstyle.apply("Welcome to Fun with Numbers!", 'GREEN'))
         print("Choose from the menu below:")
         print(" (A) Check number features")
         print(" (B) Plot numbers")
@@ -44,7 +46,7 @@ def main():
             save_stats()
             #updates exit_flag to true and closes the software.
             exit_flag = True
-        else: print("Invalid input, please try again")
+        else: print(fontstyle.apply("Invalid input, please try again", 'RED'))
 
 def number_features():
     """displays features of the chosen number"""
@@ -128,9 +130,9 @@ def plotter():
                 if another_plot != "y":
                     break
             else:
-                print("Invalid coordinates, please enter valid numerals")
+                print(fontstyle.apply("Invalid coordinates, please enter valid numerals", "RED"))
         except ValueError:
-            print("Invalid input. Please enter integers for coordinates")
+            print(fontstyle.apply("Invalid input. Please enter integers for coordinates", 'RED'))
 
 #defines the print_table function
 def print_table(table):
@@ -172,45 +174,45 @@ def save_stats():
 
 def calculator():
     """Simple Calculator capable of operations"""
+    clear_console()
+    print(fontstyle.apply("Select an Option...", 'BLUE'))
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiply")
+    print("4. Divide")
 
-print("Select an Option...")
-print("1. Addition")
-print("2. Subtraction")
-print("3. Multiply")
-print("4. Divide")
+    while True:
 
-while True:
+        choice_1 = input("Enter required Option...")
 
-    choice_1 = input("Enter required Option...")
+        if choice_1 in ('1', '2', '3', '4'):
+            try:
+                num1 = float(input("Enter First Number..."))
+                num2 = float(input("Enter Second Number..."))
+            except ValueError:
+                print(fontstyle.apply("Invalid input. Please enter appropriate values.", 'RED'))
+                continue
 
-    if choice_1 in ('1', '2', '3', '4'):
-        try:
-            num1 = float(input("Enter First Number..."))
-            num2 = float(input("Enter Second Number..."))
-        except ValueError:
-            print("Invalid input. Please enter appropriate values.")
-            continue
+            if choice_1 == '1':
+                print(num1, "+", num2, "=", add(num1, num2))
 
-        if choice_1 == '1':
-            print(num1, "+", num2, "=", add(num1, num2))
+            elif choice_1 == '2':
+                print(num1, "-", num2, "=", sub(num1, num2))
 
-        elif choice_1 == '2':
-            print(num1, "-", num2, "=", sub(num1, num2))
+            elif choice_1 == '3':
+                print(num1, "x", num2, "=", mul(num1, num2))
 
-        elif choice_1 == '3':
-            print(num1, "x", num2, "=", mul(num1, num2))
+            elif choice_1 == '4':
+                print(num1, "÷", num2, "=", truediv(num1, num2))
 
-        elif choice_1 == '4':
-            print(num1, "÷", num2, "=", truediv(num1, num2))
+            else:
+                input(fontstyle.apply("Invalid inputs. Please press enter to continue...", 'RED'))
 
-        else:
-            input("Invalid inputs. Please press enter to continue...")
-
-        continue_calculations = input("Another Calculation? y/n")
-        if continue_calculations == 'n':
-            break
-        else:
-            print("Invalid Input.")
+            continue_calculations = input("Another Calculation? y/n")
+            if continue_calculations == 'n':
+                break
+            else:
+                print(fontstyle.apply("Invalid Input.", 'RED'))
 
 def load_stats():
     """Loads statistics from previous sessions"""
