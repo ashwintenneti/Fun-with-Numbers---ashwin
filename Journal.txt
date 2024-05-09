@@ -69,3 +69,9 @@ Found a problem. Unable to call the colorama packgae underneath a while loop. Wh
 Have written code for calculator feature.
 Basic function works but when running the program, everything is flashing and not working properly.
 Error handling as well isn't functioning as it is meant to.
+
+9/5/2024
+Have fixed calculator bug.
+Re-written calculator code by hand.
+Used import features to import operations for the calculator feature.
+new problem. when testing code. it started with option d from the start.
