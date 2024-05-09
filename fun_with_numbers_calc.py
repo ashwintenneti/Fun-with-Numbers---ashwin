@@ -1,5 +1,9 @@
 """Fun With Numbers by Ashwin Tenneti"""
 #import function imports libraries into the program
+from operator import add
+from operator import sub
+from operator import mul
+from operator import truediv
 import os
 
 NUMBER_COUNT = 0
@@ -23,6 +27,7 @@ def main():
         print(" (A) Check number features")
         print(" (B) Plot numbers")
         print(" (C) Check overall stats")
+        print(" (D) Calculator")
         print("\n (X) save and exit")
         choice = input("\nchoice: ").upper()
 
@@ -33,6 +38,8 @@ def main():
             plotter()
         elif choice == "C":
             stats()
+        elif choice == "D":
+            calculator()
         elif choice == "X":
             save_stats()
             #updates exit_flag to true and closes the software.
@@ -162,6 +169,48 @@ def save_stats():
         file.write(f"{SMALLEST_NUMBER}\n")
         file.write(f"{LARGEST_NUMBER}\n")
         file.write(f"{PLOT_COUNT}\n")
+
+def calculator():
+    """Simple Calculator capable of operations"""
+
+print("Select an Option...")
+print("1. Addition")
+print("2. Subtraction")
+print("3. Multiply")
+print("4. Divide")
+
+while True:
+
+    choice_1 = input("Enter required Option...")
+
+    if choice_1 in ('1', '2', '3', '4'):
+        try:
+            num1 = float(input("Enter First Number..."))
+            num2 = float(input("Enter Second Number..."))
+        except ValueError:
+            print("Invalid input. Please enter appropriate values.")
+            continue
+
+        if choice_1 == '1':
+            print(num1, "+", num2, "=", add(num1, num2))
+
+        elif choice_1 == '2':
+            print(num1, "-", num2, "=", sub(num1, num2))
+
+        elif choice_1 == '3':
+            print(num1, "x", num2, "=", mul(num1, num2))
+
+        elif choice_1 == '4':
+            print(num1, "÷", num2, "=", truediv(num1, num2))
+
+        else:
+            input("Invalid inputs. Please press enter to continue...")
+
+        continue_calculations = input("Another Calculation? y/n")
+        if continue_calculations == 'n':
+            break
+        else:
+            print("Invalid Input.")
 
 def load_stats():
     """Loads statistics from previous sessions"""
