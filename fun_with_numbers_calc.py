@@ -24,7 +24,7 @@ def main():
     #main function will continue to loop, whilst exit_flag == false
     while not exit_flag:
         clear_console()
-        print(fontstyle.apply("Welcome to Fun with Numbers!", 'GREEN'))
+        print(fontstyle.apply("Welcome to Fun with Numbers!", 'GREEN/UNDERLINE'))
         print("Choose from the menu below:")
         print(" (A) Check number features")
         print(" (B) Plot numbers")
@@ -120,7 +120,7 @@ def plotter():
 
             #tests if the values entered are valid
             if 1 <= x_axis <= 38 and 1 <= y_axis <= 12:
-                table[y_axis - 1][x_axis -1] = "X"
+                table[y_axis - 1][x_axis -1] = "💩"
 
                 #updates the plot_count global variable
                 PLOT_COUNT += 1
@@ -130,7 +130,7 @@ def plotter():
                 if another_plot != "y":
                     break
             else:
-                print(fontstyle.apply("Invalid coordinates, please enter valid numerals", "RED"))
+                print(fontstyle.apply("Invalid coordinates, please enter valid numerals", 'RED'))
         except ValueError:
             print(fontstyle.apply("Invalid input. Please enter integers for coordinates", 'RED'))
 
@@ -148,7 +148,7 @@ def print_table(table):
 def stats():
     """Displays statistics of numbers used in the program"""
     clear_console()
-    print("Here is the statistics of overall use:")
+    print(fontstyle.apply("Here is the statistics of overall use:", 'PURPLE/UNDERLINE'))
     print(f"\n Numbers entered: {NUMBER_COUNT}")
     print(f" Total of numbers: {NUMBER_TOTAL}")
     print(f" Average of numbers: {NUMBER_TOTAL/NUMBER_COUNT}")
