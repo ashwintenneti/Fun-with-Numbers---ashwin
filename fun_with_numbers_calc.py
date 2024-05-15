@@ -44,6 +44,7 @@ def main():
             calculator()
         elif choice == "X":
             save_stats()
+            print(fontstyle.apply("\n Fun With Numbers successfully closed. Data saved on stats.txt. Have a nice day! \n", 'YELLOW'))
             #updates exit_flag to true and closes the software.
             exit_flag = True
         else: print(fontstyle.apply("Invalid input, please try again", 'RED'))
@@ -130,7 +131,7 @@ def plotter():
                 if another_plot != "y":
                     break
             else:
-                print(fontstyle.apply("Invalid coordinates, please enter valid numerals", 'RED'))
+                print(fontstyle.apply("Invalid coordinates, please enter valid numerals", 'BLINK/RED'))
         except ValueError:
             print(fontstyle.apply("Invalid input. Please enter integers for coordinates", 'RED'))
 
