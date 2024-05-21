@@ -25,11 +25,12 @@ def main():
     while not exit_flag:
         clear_console()
         print(fontstyle.apply("Welcome to Fun with Numbers!", 'GREEN/UNDERLINE'))
-        print("Choose from the menu below:")
+        print("\n Choose from the menu below:")
         print(" (A) Check number features")
         print(" (B) Plot numbers")
         print(" (C) Check overall stats")
         print(" (D) Calculator")
+        print(" (E) Title Page and Creator")
         print("\n (X) save and exit")
         choice = input("\nchoice: ").upper()
 
@@ -42,6 +43,8 @@ def main():
             stats()
         elif choice == "D":
             calculator()
+        elif choice == "E":
+            title()
         elif choice == "X":
             save_stats()
             print(fontstyle.apply("\n Fun With Numbers successfully closed. Data saved on stats.txt. Have a nice day! \n", 'YELLOW'))
@@ -52,7 +55,9 @@ def main():
 def number_features():
     """displays features of the chosen number"""
     clear_console()
+
     global NUMBER_COUNT, NUMBER_TOTAL, SMALLEST_NUMBER, LARGEST_NUMBER
+    print(fontstyle.apply("Number features \n", 'BLUE/BOLD/UNDERLINE'))
     number = int(input("Please enter a whole number to be checked: "))
     clear_console()
     print(f"The features of {number} are...")
@@ -72,7 +77,7 @@ def number_features():
     else:
         print(" Odd")
 
-     #Lists the factors of number
+    #Lists the factors of number
     factor_count = 0
     print(" Factors are", end="")
     if number > 0:
@@ -85,13 +90,13 @@ def number_features():
             if number % i == 0:
                 print(" " + str(i), end="")
                 factor_count += 1
-     #indicates if number is prime or not
+    #indicates if number is prime or not
     if factor_count == 2:
         print("\n Is prime number")
     else:
         print("\n Is not a prime number")
 
-    input("\n Press Enter to continue...")
+    input("\n Press enter to continue...")
 
     #updates the global variable
     if NUMBER_COUNT == 0:
@@ -107,6 +112,7 @@ def number_features():
 def plotter():
     """Plots the number on a graph"""
     clear_console()
+    print(fontstyle.apply("Number Plotter: ", 'BLACK/BOLD/UNDERLINE'))
     global PLOT_COUNT
     #shows how many column spces and row spaces we have
     num_columns = 38
@@ -116,8 +122,8 @@ def plotter():
     while True:
         try:
             #ask user for a set of coordinates (x and y coordinates. one for each axis)
-            x_axis = int(input("Enter x axis (1-38): "))
-            y_axis = int(input("Enter y axis (1-12): "))
+            x_axis = int(input("\n Enter x axis (1-38): "))
+            y_axis = int(input("\n Enter y axis (1-12): "))
 
             #tests if the values entered are valid
             if 1 <= x_axis <= 38 and 1 <= y_axis <= 12:
@@ -131,7 +137,7 @@ def plotter():
                 if another_plot != "y":
                     break
             else:
-                print(fontstyle.apply("Invalid coordinates, please enter valid numerals", 'BLINK/RED'))
+                print(fontstyle.apply("Invalid coordinates, please enter valid numerals", 'RED'))
         except ValueError:
             print(fontstyle.apply("Invalid input. Please enter integers for coordinates", 'RED'))
 
@@ -174,17 +180,17 @@ def save_stats():
         file.write(f"{PLOT_COUNT}\n")
 
 def calculator():
-    """Simple Calculator capable of operations"""
+    """Simple Calculator"""
     clear_console()
-    print(fontstyle.apply("Select an Option...", 'BLUE'))
-    print("1. Addition")
+    print(fontstyle.apply("Select an Option...", 'CYAN/UNDERLINE/BOLD'))
+    print("\n 1. Addition")
     print("2. Subtraction")
     print("3. Multiply")
     print("4. Divide")
 
     while True:
 
-        choice_1 = input("Enter required Option...")
+        choice_1 = input("\n Enter required Option...")
 
         if choice_1 in ('1', '2', '3', '4'):
             try:
@@ -214,6 +220,73 @@ def calculator():
                 break
             else:
                 print(fontstyle.apply("Invalid Input.", 'RED'))
+
+def title():
+    """Title page for Fun with Numbers"""
+    clear_console()
+    print("\n Welcome to fun with Numbers! - (Ashwin Edition)")
+    print("\n Fun with numbers is a very useful tool that you can use in your daily life!")
+    print("The creator Ashwin Tenneti has dedicated countless amounts of research to make this programme the most accesible by anyone")
+    print("Enjoy Fun with Numbers! Please be sure to tell all you friends about his programme! (we need more funding)")
+    print("\n Creator...")
+    print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+    print("****************************************//(((((####%%%#########((((((/********************")
+    print("********************************//((#%%%%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&%%#(//***********")
+    print("***************************/(#%&&&&&&&&&&&&&&&&@&&&&&&&&&&&&&&@@@@@@@@@@@@@@@&&%#/********")
+    print("***********************/(%&&&&&&@&@@@@@@&@@@@&&&&&%%&%&&&&&&&&&&@@@@@@@@@@@@@@@@@&#/******")
+    print("********************/(#%&&&&&&&&&&@@@@@@&&&&&&&%%%&&&&&&%&&&&@@&&&&&%&&&&&&@@@@@@&&#/***,,")
+    print("******************/#%&&&&&&&&&&&@@@@&&@&&&&&&&&&&@&&@@@@@&&&@@@@&&&&&&&&&%&&@&&&&&&&(/**,*")
+    print("*****************(%&&&&&&&&&&&&&&&&&&&&&&&&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@&&&&&&&&&&&&#/****")
+    print("***************/#&&&&&&&&@@@@@@&&&&&&&@@@@@&&&&&&@@@@@@@&&@@@@@@@@@@@@@@@&&&@@@@@@&%/**,**")
+    print("**************/%&&&&&&&@@@@@@@&&&&&&&&&&&&&&&&&&&%%%%%%####%%%%%&&&&@@@@@@@@@@@@@&#/***,**")
+    print("*************/#&&&&&&&@@@@@@@&&&&&&&&%%%%%%%######((((((((((#####%%%&&&@@@@@@@@@&(****,,**")
+    print("*************(%&&&@@&&@@@@@@@@&&&%%#(((((((((((((/////////(((((###%%%%%&&@@@@@@@&#/*,,,,,*")
+    print("************(%&&&@@@&&@@@&&&&&%#(((((///////////*//////////////(((##%%%%&&&&@@@@@@%/*,,,,,")
+    print("************#&&&&&&&&&&&&%&&%##((((/////******************///////(((###%%%%&&&@@@@&#**,,,,")
+    print("************#&&&&&&@@@&&&%%##((((((/////*********************////((((###%%%%%&&@@@@&(*,,,,")
+    print("*********,**#&&&&&&&&&&%%####((((((////**********************////((((######%%%&&&@@&#/,,,,")
+    print(",,,*****,,**#&&&&&&&&&%%#####(((((/////********,,*************////((((#####%%%&&&&&&%/*,,,")
+    print(",,,,,*******#&&&&&@@&%%#######((((///********,,****,************///((((####%%%%&&&&&%/*,,,")
+    print(",***********(%&&@@&&%######%%%%%%#####(((///**************////((####%%%%%%%%%%%%&&@&#/*,,,")
+    print(",***********(%&@@&%%###%%%%##(((((((#####((((/////*****///((((#######(((##%%%%%%%&@&#/*,,,")
+    print(",*,,,,,,,***(%@@@&%%##%%#(((/////////(((((((((///////////((((###((((((////(##%%%%&&&(/,,,,")
+    print(",,,,,,,,,,,*/%&@@&%#####((((##(((((((((((((((((//****//(((###((((///((((((((##%%%&&&/*,,,,")
+    print(",*,,,,,,,,,*/#&@&&%###((((#%%%##%&&&&#//((((((((/////((((((((((##%%%%%%%#########%&%/*,,,,")
+    print(",,,,,,,,,,,**#&&&&%##(((((####((/(##(//////(((((((//(((((((((**/#&&%(/(#%%%######%%(*,,,,,")
+    print(",*******(###(#&&&%%##(((////((((((/////////(((((((//((((((((///(((((((######((###%%#//****")
+    print("******/(####((#%&&%##(((//////////***//////((((((/////(((((((//**///((((((((((###%%%#%%#/*")
+    print("******/(#((((((#%%%###(((////////////***//((((((///////((##(((////*////////(((###%%####(/*")
+    print("******/(((##(###%%%%###((///*************/(((((//*****//((##((/////////////(((###%####(/**")
+    print("*******/(#((((####%%###(((//*****,,,****/((//////**,***///((((/******//////((########(/*,*")
+    print("********((((((((###%####((///**********/(((/(###(/////((((//(((/*******///(((######((/****")
+    print("********/(((##((((#######((////******////((((((///((((((#####((//******///((#######((/****")
+    print("*********((###############((((//((//////////////*****///(///((((/////////((##########(/***")
+    print("*********/(((((((#(########(((((((((###((((((///////////((((((((((((((((((###########(/***")
+    print("***********/(((((((((######((((((##%%%######((((((///((((((((#######(((((###########(/****")
+    print("*********************(###((((((((//((##%%%####((((((((((#####%%%&%%###((######((((((******")
+    print("*********************/###(((((((((///(((((((((///****///((##%%##((((((((####(/************")
+    print("**********************(####((((((((((((((((((((((((////(((####(((((((((####(/*************")
+    print("**********************(######((((((((((//////((((((((((#(((((((((((((#####(/**************")
+    print("**********,,,*********/########((((((((////////////////////((((((((#####(/****************")
+    print("********,,,***********/(###########((((((((////**/////////((((((########(*****************")
+    print("**********************/(#############((((((/////////////((((((########%#/*******,*********")
+    print("***********************(###############((((((((((((((((((((((########%%(/*****************")
+    print("***********************(##########################((((###############%%(/*****************")
+    print("***********************(###((((#######################################%(/*****************")
+    print("***********************(##(((((((#######################################/*****************")
+    print("***********************(##(((((/(((((#(((((((((((((###############(#####(*****************")
+    print("**********************/(##(((///////(((((((//////////(((((####(((((((###(*****************")
+    print("***************,,*(#(((###(((////////((((((///////////((((###(((((((((####(/**************")
+    print("*************,,.,(%%######(((//////////(((((((//////(((((((#(((///((((###%%#/,,***********")
+    print("*************,. ,/%%%####((((///////////((((/////(/(((((((((((////((((####%%(..,**********")
+    print(",*******,,,,,... ,(#####(((((/////////////(//////////(((((((//////(((((###%(,..,,,,,,*****")
+    print(",***,,..........  ./##((((((///////////////////////////((((////////(((((##/,............,*")
+    print(",,...        ....   ,/((((((///////////////////////////////////////(((((/,......     .   .")
+    print("......                ,*/(//////////////////////////////////////////((/,. ....            ")
+    print("........                .**/////////////////////////////////////////*,                    ")
+    print("....  ...                .,***************/////////////////////*,.                      ")
+    print("....      .                  ..,,,,,,**********/*************,..                        ")
+    print("....    ..                ...       .*/****************/*,.                            ")
 
 def load_stats():
     """Loads statistics from previous sessions"""
