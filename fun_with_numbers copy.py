@@ -35,6 +35,7 @@ def main():
             stats()
         elif choice == "X":
             save_stats()
+        elif choice == "D":
             #updates exit_flag to true and closes the software.
             exit_flag = True
         else: print("Invalid input, please try again")
@@ -162,6 +163,7 @@ def save_stats():
         file.write(f"{SMALLEST_NUMBER}\n")
         file.write(f"{LARGEST_NUMBER}\n")
         file.write(f"{PLOT_COUNT}\n")
+
 
 def load_stats():
     """Loads statistics from previous sessions"""
