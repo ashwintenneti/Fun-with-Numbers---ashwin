@@ -240,8 +240,8 @@ def creator():
     clear_console()
     print(fontstyle.apply("\n Welcome to fun with Numbers! - (Ashwin Edition)", 'PURPLE/UNDERLINE/BOLD'))
     print("\n Fun with numbers is a very useful tool that you can use in your daily life!")
-    print("The creator Ashwin Tenneti has dedicated countless amounts of research to make this programme the most accesible by anyone")
-    print("Enjoy Fun with Numbers! Please be sure to tell all you friends about his programme!")
+    print("The creator Ashwin Tenneti has dedicated countless amounts of research to make this programme the most accessible by anyone")
+    print("Enjoy Fun with Numbers! Please be sure to tell all your friends about his programme!")
     print("\n Creator...")
     print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
     print("****************************************//(((((####%%%#########((((((/********************")
@@ -301,7 +301,7 @@ def creator():
     print("....  ...                .,***************/////////////////////*,.                      ")
     print("....      .                  ..,,,,,,**********/*************,..                        ")
     print("....    ..                ...       .*/****************/*,.                            ")
-    input("\n Press enter to continue and experience the world of Fun with Ashwin...")
+    input("\n Press enter to continue C")
 
 def load_stats():
     """Loads statistics from previous sessions"""
