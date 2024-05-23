@@ -84,3 +84,8 @@ added text colours for invalid options and option headings.
 21/5/2024
 Added title page for the code.
 Added my face in ascii code as the creator
+
+23/5/2024
+Added a help feature.
+Rearranged the creator page and made it as an option.
+Completed final code.
